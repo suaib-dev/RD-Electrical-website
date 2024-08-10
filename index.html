@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD Electricals</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        /* Fade-in animation */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 2s ease-out forwards;
+        }
+
+        /* Typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+
+        .typing-animation {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 1em;
+            width: 0;
+            animation: typing 6s steps(40, end) infinite, blink .75s step-end infinite;
+            animation-delay: 2s;
+            /* Start typing after fade-in */
+        }
+
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+
+            80% {
+                width: 100%;
+                /* Typing completes at 80% of the time */
+            }
+
+            100% {
+                width: 100%;
+                /* Maintain the typed text for the remaining 20% */
+            }
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+
+        /* Fade-in-up animation */
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        /* Define the fade-in-left animation */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Define the fade-in-right animation */
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply the animation but keep it paused */
+        .fade-in-left,
+        .fade-in-right {
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        /* Add specific classes for each direction */
+        .fade-in-left {
+            animation-name: fadeInLeft;
+        }
+
+        .fade-in-right {
+            animation-name: fadeInRight;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <header class="text-gray-400 bg-gray-800 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="./images/logo.png" alt="...Loading" , style="border-radius: 100% ; width: 40px;">
+                <span class="ml-3 text-xl" style="    font-family: 'Comic Sans MS', sans-serif;">Alfa Modular Box</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a href="./index.html" class="mr-5 hover:text-white">Home</a>
+                <a href="#products" class="mr-5 hover:text-white">Our Products</a>
+                <a href="#explore" class="mr-5 hover:text-white">Explore</a>
+                <a href="#galary" class="mr-5 hover:text-white">Galary</a>
+                <a href="../about_us.html" class="mr-5 hover:text-white">About Us</a>
+                <a href="./contect_us.html" class="mr-5 hover:text-white">Contact Us</a>
+            </nav>
+
+            <a href="https://wa.me/919971706162" target="_blank">
+                <button
+                    class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-green-700 rounded text-base mt-4 md:mt-0">
+                    WhatsApp
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                        class="bi bi-whatsapp ml-2" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </button>
+            </a>
+
+            <button
+                class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+                onclick="window.location.href='./get_qute.html';">Get quote
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+
+        <!-- <section class="relative bg-gradient-to-r from-blue-500 via-white-500 to-blue-500 text-white py-24"> -->
+        <!-- Background Image -->
+        <!-- <div class="absolute inset-0 opacity-25 bg-cover bg-center"
+                style="background-image: url('your-background-image.jpg');"></div>
+
+            <div class="container mx-auto text-center relative z-10">
+                <h1 class="text-6xl font-extrabold drop-shadow-lg">Discover Premium Modular & Fan Boxes</h1>
+                <p class="mt-6 text-xl font-light max-w-2xl mx-auto">
+                    Experience top-tier modular solutions and fan boxes engineered for ultimate comfort and safety in
+                    your home or workspace.
+                </p> -->
+
+        <!-- Product Image -->
+
+        <!-- <div class="flex justify-center mt-10 space-x-6">
+                    <div class="max-w-lg">
+                        <img src="images/3x3-modular-box.png" alt="Premium Modular & Fan Box"
+                            class="rounded-lg shadow-lg transform hover:scale-105 transition">
+                    </div>
+                    <div class="max-w-lg">
+                        <img src="images/fan-box.png" alt="Premium Modular & Fan Box"
+                            class="rounded-lg shadow-lg transform hover:scale-105 transition">
+                    </div>
+                </div> -->
+
+        <!-- <a href="#products"
+                    class="mt-12 inline-block bg-white text-blue-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
+                    Explore Our Products
+                </a>
+            </div>
+        </section> -->
+        <section
+            class="relative bg-gradient-to-r from-blue-500 via-white-500 to-blue-500 text-white py-24 overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 opacity-25 bg-cover bg-center"
+                style="background-image: url('your-background-image.jpg');"></div>
+
+            <div class="container mx-auto text-center relative z-10 opacity-0 animate-fade-in">
+                <h1 class="text-6xl font-extrabold drop-shadow-lg">
+                    <span class="typing-animation">Discover Premium Modular & Fan Boxes</span>
+                </h1>
+                <p class="mt-6 text-xl font-light max-w-2xl mx-auto">
+                    Experience top-tier modular solutions and fan boxes engineered for ultimate comfort and safety in
+                    your home
+                    or workspace.
+                </p>
+
+                <!-- Product Image -->
+                <div class="flex justify-center mt-10 space-x-6">
+                    <div class="max-w-lg transform hover:scale-105 transition duration-300">
+                        <img src="images/3x3-modular-box.png" alt="Premium Modular Box" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="max-w-lg transform hover:scale-105 transition duration-300">
+                        <img src="images/fan-box.png" alt="Premium Fan Box" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+
+                <a href="#products"
+                    class="mt-12 inline-block bg-white text-blue-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-105">
+                    Explore Our Products
+                </a>
+            </div>
+        </section>
+        <!-- Explore   -->
+
+        <section id="explore">
+            <!-- Explore 1 -->
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                    <div
+                        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center fade-in-left">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                            Premium Quality Modular Boxes
+                            <br class="hidden lg:inline-block">For Your Electrical Needs
+                        </h1>
+                        <p class="mb-8 leading-relaxed">
+                            Discover our range of modular boxes made from high-grade GI sheets, available in both 18
+                            Gauge and 20 Gauge. Ideal for various applications, our boxes ensure durability and
+                            reliability for all your electrical installations.
+                        </p>
+                        <div class="flex justify-center">
+                            <button onclick="window.location.href='./contect_us.html'"
+                                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg transition-transform duration-300 hover:scale-105">
+                                Contact Us
+                            </button>
+                            <!-- <button onclick="window.location.href='./contect_us.html'"
+                                class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg transition-transform duration-300 hover:scale-105">
+                                Contact Us
+                            </button> -->
+                        </div>
+                    </div>
+                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 fade-in-right">
+                        <img class="object-cover object-center rounded" alt="modular box"
+                            src="images/8x3-modular-box.png">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Explore 2 -->
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 fade-in-left">
+                        <img class="object-cover object-center rounded" alt="fan box" src="images/fan-box.png">
+                    </div>
+                    <div
+                        class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center fade-in-right">
+                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                            Robust Fan Boxes
+                            <br class="hidden lg:inline-block">Crafted for Safety
+                        </h1>
+                        <p class="mb-8 leading-relaxed">
+                            Our fan boxes are designed to provide secure and sturdy support for ceiling fans and
+                            lighting fixtures. Made from quality materials, they offer unmatched strength and longevity,
+                            ensuring peace of mind for all your electrical setups.
+                        </p>
+                        <div class="flex justify-center">
+                            <button onclick="window.location.href='./get_qute.html'"
+                                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg transition-transform duration-300 hover:scale-105">
+                                Get Quotetion
+                            </button>
+                            <!-- <button
+                                class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg transition-transform duration-300 hover:scale-105">
+                                Learn More
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+
+
+        <!-- Products Section -->
+        <section id="products" class="py-16">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-semibold text-gray-800">Our Products</h2>
+                <div class="flex flex-wrap justify-center mt-8">
+
+                    <!-- Product 1 -->
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="images/galary-image.png" alt="Modular Box" class="w-full">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">Modular Box</h3>
+                                <p class="mt-4 text-gray-600">Durable and aesthetically pleasing modular boxes
+                                    perfect
+                                    for
+                                    any setup.</p>
+                                <a href="#"
+                                    class="block mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="images/fan-box.png" alt="Fan Box" class="w-full">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">Fan Box</h3>
+                                <p class="mt-4 text-gray-600">Reliable fan boxes ensuring safety and efficiency in
+                                    every
+                                    use.</p>
+                                <a href="#"
+                                    class="block mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Galary -->
+        <section class="text-gray-600 body-font" id="galary">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-col text-center w-full mb-20">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Galary</h1>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> ​We are leading manufacturers of all
+                        types of
+                        electrical modular boxes. All modular
+                        boxes are of made of GI Sheet and are available in both 18 Gauge and 20 Gauge.These come in
+                        various sizes. The modular boxes we provide are - ​3x3" (2 Module)​ ​4 x 3" (3 Module)​, ​5
+                        x
+                        3" (4
+                        Module)​, ​8 x 3" (6 Module),​ ​5 x 5" (8 Module), 8 x 6" (12 Module) .</p>
+                </div>
+                <div class="flex flex-wrap -m-4">
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/packed-modular-boxes.jpg">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    Modular Box</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Packed Modular Boxes
+                                    in
+                                    Cartoon</h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/8x3-modular-box.png">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    8x3 of Modular Box</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is 6M (8x3)
+                                    modular
+                                    box</h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/fan-box.png">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    Fan Box</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Fan box with 9
+                                    inch of road</h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/galary-modular box.jpg">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    8x6 modular box</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">12M modular box </h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/galary-image.png">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    4M modular box with nakka model</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">4M modular box (nakka)
+                                </h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3 sm:w-1/2 p-4">
+                        <div class="flex relative">
+                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
+                                src="images/galary-image2.jpg">
+                            <div
+                                class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
+                                    8x3 modular box</h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Raw 6M modular boxes
+                                </h1>
+                                <p class="leading-relaxed">We are selling best quality modular boxes by prime sheet
+                                    at
+                                    reasonable price.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testi monials -->
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <p class="leading-relaxed mb-6">The modular boxes from alfa are top-notch! The
+                                durability of
+                                the GI sheet and the precision in the manufacturing process are evident in every
+                                piece.
+                                Whether it's the 3x3" or the larger 8x6", every box fits perfectly and stands up to
+                                the
+                                toughest installations. Highly recommend these to any professional in the field..
+                            </p>
+                            <a class="inline-flex items-center">
+                                <img alt="testimonial" src="images/logo.png"
+                                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                <span class="flex-grow flex flex-col pl-4">
+                                    <span class="title-font font-medium text-gray-900">Wakeel</span>
+                                    <span class="text-gray-500 text-sm">Construction builder</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-4 md:w-1/2 w-full">
+                        <div class="h-full bg-gray-100 p-8 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <p class="leading-relaxed mb-6">I've been in the construction business for over 20
+                                years,
+                                and finding reliable suppliers is key. [Your Company Name] has become our go-to for
+                                modular boxes. The range of sizes, especially the 8x3" and 8x6" options, are exactly
+                                what we need for large projects. The consistency in quality and quick delivery time
+                                makes them stand out..</p>
+                            <a class="inline-flex items-center">
+                                <img alt="testimonial" src="images/logo.png"
+                                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                                <span class="flex-grow flex flex-col pl-4">
+                                    <span class="title-font font-medium text-gray-900">Rakesh kumar</span>
+                                    <span class="text-gray-500 text-sm">Electricals whole seller</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section class="bg-blue-600 py-16">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-semibold mb-6 text-white">Ready to Get Started?</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-8 text-white">
+                    Contact us today to learn more about our products or to get a quote. We're here to help you find the
+                    perfect modular solution for your project.
+                </p>
+                <a href="./contect_us.html"
+                    class="mt-8 inline-block bg-white text-blue-600 py-3 px-6 rounded-lg hover:bg-gray-300">Contact
+                    Us</a>
+                <a href="https://wa.me/919971706162" target="_blank"
+                    class="mt-8 inline-block bg-white text-blue-600 py-3 px-6 rounded-lg hover:bg-gray-300">WhatsApp
+                    Us</a>
+                <a href="./get_qute.html"
+                    class="mt-8 inline-block bg-white text-blue-600 py-3 px-6 rounded-lg hover:bg-gray-300">Get
+                    Quote</a>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+    <footer class="bg-gray-800 text-gray-400 body-font">
+        <div class="container px-5 py-8 mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center">
+
+            <!-- Logo and Company Info -->
+            <div class="flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
+                <img id="footer-logo" src="images/logo.png" alt="Alfa Modular Box Logo" class="h-15">
+                <span class="ml-3 text-xl text-white">&copy; <span id="year"></span> Alfa Modular Box</span>
+            </div>
+
+            <!-- Rights Reserved Text -->
+            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                All Rights Reserved.
+            </p>
+
+            <!-- Social Media Links -->
+            <div class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/alfamodularbox/" target="_blank"
+                    class="text-gray-400 hover:text-blue-500 transition-colors duration-300 mx-2">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919971706162"
+                    class="text-gray-400 hover:text-green-500 transition-colors duration-300 mx-2" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </a>
+
+                <!-- Google Business -->
+                <a href="https://www.google.com/search?q=ALFA+Modular+Box&stick=H4sIAAAAAAAA_-NgU1IxqDC2NEhOSza0NDdNTUk1SzG0AgoZpRgZpZmYm5mkGBqbGCxiFXD0cXNU8M1PKc1JLFJwyq8AAPhJfQA7AAAA&hl=en&mat=CYYlOYcFf5gVElYBEKoLaQuQq1wdy84voIXaK3AmE1_MRp4JHZEtGy7oiUHe6mDzI7xvM0Iw8MDl2E6SKA8y7wx6xAXGh2LbRqjljjpxqAZdBhyEVLXR-Ko0GvlSyvYXng&authuser=0"
+                    class="text-gray-400 hover:text-blue-600 transition-colors duration-300 mx-2" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-6 h-6" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.69 2 6 4.69 6 8c0 2.68 2.2 6.27 5.2 11.35L12 21l.8-1.65C15.8 14.27 18 10.68 18 8c0-3.31-2.69-6-6-6zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z">
+                        </path>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/alfa.modularbox/" target="_blank"
+                    class="text-gray-400 hover:text-pink-500 transition-colors duration-300 mx-2">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function () {
+        const elements = document.querySelectorAll('.fade-in-left, .fade-in-right');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+
+
+</html>
